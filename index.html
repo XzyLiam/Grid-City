@@ -1,55 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Grid</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <canvas id="scene"></canvas>
-
-  <div id="intro">
-    <p id="intro-desktop">Click to look around. W A S D to move, Space to rise, Shift to sink, Esc to release the mouse.</p>
-    <p id="intro-touch">Left stick moves. Drag anywhere on the right side to look.</p>
-  </div>
-
-  <div id="joystick" aria-hidden="true">
-    <div id="stick"></div>
-  </div>
-
-  <script>
-    // Load three.js (trying several sources), then start script.js
-    (function () {
-      var sources = [
-        'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js',
-        'https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js',
-        'three.min.js' // optional local copy placed next to index.html
-      ];
-
-      function fail() {
-        var p = document.querySelector('#intro p:not([style*="none"])') || document.querySelector('#intro p');
-        document.querySelectorAll('#intro p').forEach(function (el) { el.style.display = 'none'; });
-        var msg = document.createElement('p');
-        msg.textContent = 'The 3D library could not load. Check your connection, turn off any ad blocker for this page, or add three.min.js next to index.html.';
-        document.getElementById('intro').appendChild(msg);
-      }
-
-      function load(i) {
-        if (i >= sources.length) { fail(); return; }
-        var s = document.createElement('script');
-        s.src = sources[i];
-        s.onload = function () {
-          var app = document.createElement('script');
-          app.src = 'script.js';
-          document.body.appendChild(app);
-        };
-        s.onerror = function () { load(i + 1); };
-        document.head.appendChild(s);
-      }
-
-      load(0);
-    })();
-  </script>
+  <div id="grid" class="grid"></div>
+  <script src="script.js"></script>
 </body>
 </html>
