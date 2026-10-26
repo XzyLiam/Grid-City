@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Grid</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="scene"></canvas>
+
+  <div id="intro">
+    <p id="intro-desktop">Click to look around. W A S D to move, Space to rise, Shift to sink, Esc to release the mouse.</p>
+    <p id="intro-touch">Left stick moves. Drag anywhere on the right side to look.</p>
+  </div>
+
+  <div id="joystick" aria-hidden="true">
+    <div id="stick"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
